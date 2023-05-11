@@ -28,7 +28,7 @@ router.post('/login', async function (req, res, next) {
     }
 
   } catch(e) {
-    next(e)
+    return next(e)
   }
 });
 
@@ -45,7 +45,7 @@ router.post('/register', async function (req, res, next) {
     User.updateLoginTimestamp(username);
     return res.json({token});
   } catch(e) {
-    next(e)
+    return next(e)
   }
 });
 
